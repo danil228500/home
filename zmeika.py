@@ -1,4 +1,4 @@
-№необходимо расширение pygame
+#необходимо расширение pygame
 
 import pygame as pg
 
