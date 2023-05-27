@@ -3,6 +3,7 @@ from time import sleep
 import pygame
 from buttom import Buttom
 from game_stats import GameStats
+from score_board import ScpreBoard  
 from settings import Setting
 from ship import Ship
 from bullet import Bullet
@@ -29,6 +30,7 @@ class AlienInvasion:
         pygame.display.set_caption('ИНОПЛАНЕТНОЕ ВТОРЖЕНИЕ')
 
         self.stats = GameStats(self)
+        self.sb = ScpreBoard(self)
         
 
         self.ship = Ship(self)
@@ -181,6 +183,8 @@ class AlienInvasion:
 
             for bullet in self.bullets.sprites():
                 bullet.draw_bullet()
+
+            self.sb.show_score()
 
             self.aliens.draw(self.screen)
             if not self.stats.game_active:
